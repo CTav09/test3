@@ -1,0 +1,67 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>nothing.real</title>
+  <style>
+    body {
+      margin: 0;
+      background: #1e1e1e;
+      font-family: Arial, sans-serif;
+    }
+    .browser {
+      width: 90%;
+      height: 90vh;
+      margin: 20px auto;
+      border: 2px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+    }
+    .address-bar {
+      background: #333;
+      color: #ccc;
+      padding: 10px;
+      font-size: 14px;
+    }
+    .address-bar input {
+      width: 90%;
+      background: #222;
+      border: none;
+      padding: 8px;
+      color: #0f0;
+      font-family: monospace;
+      font-size: 14px;
+    }
+    iframe {
+      flex-grow: 1;
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="browser">
+  <div class="address-bar">
+<input type="text" id="urlInput" value="https://linkprotect.cudasvc.com/url?a=https%3a%2f%2flite.duckduckgo.com%2flite%2f&c=E,1,cUTJ-OSLwQWpWxYNzSwdlRNjgsd959M0JNYOy9bg52RzVKAZVDW7viDY2UOhZMRxDYf8isXDvX1myHKfQDOf_jbrcntIO_-DCSf5rVOThy4N5W5ZGawAEAhxkQ,,&typo=1" onkeydown="if(event.key==='Enter') loadURL()">
+  </div>
+  <iframe id="browserFrame" src="https://linkprotect.cudasvc.com/url?a=https%3a%2f%2flite.duckduckgo.com%2flite%2f&c=E,1,6tACN9QwUByBzGe_Vz4jJiV_A1HQySfgW9Z11vqGscrsfnloR-QCAUAKFRSUpekjXLx8Zp-0E8lfUqNpFbGVx48ht18kyLCqP5PwvcghMFJ-8TV0mVw3zA,,&typo=1"></iframe>
+</div>
+
+<script>
+function loadURL() {
+  let url = document.getElementById('urlInput').value;
+  if (!url.startsWith('https://') && !url.startsWith('[http://]http://')) {
+    url = 'https://' + url;
+  }
+  document.getElementById('browserFrame').src = url;
+}
+</script>
+
+</body>
+</html>
